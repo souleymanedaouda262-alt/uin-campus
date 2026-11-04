@@ -1,23 +1,14 @@
-#!/bin/sh
-{
-echo "# UIN-Campus"
-echo "Systeme de gestion academique de l'UIN (projet fil rouge C++23)."
-echo
-echo "## Versions des outils"
-echo "- g++ $(g++ --version | head -1 | awk '{print $NF}')"
-echo "- clang++ $(clang++ --version | head -1 | awk '{print $4}')"
-echo "- cmake $(cmake --version | head -1 | awk '{print $3}')"
-echo "- ninja $(ninja --version)"
-echo "- gdb $(gdb --version | head -1 | awk '{print $NF}')"
-echo "- git $(git --version | awk '{print $3}')"
-echo
-echo "## Construire"
-echo '```'
-echo "cmake --preset debug"
-echo "cmake --build --preset debug"
-echo "./build/debug/uin-campus"
-echo '```'
-echo
-echo "## Historique"
-git log --oneline | sed 's/^/- /'
-} > README.md
+# UIN-Campus
+Systeme de gestion academique de l'UIN (projet fil rouge C++23).
+
+## Versions des outils
+g++ 15.2.0, clang++ 21, cmake 4.2.3, ninja 1.13.2, gdb 17.1, git 2.53.0
+
+## Construire
+cmake --preset debug
+cmake --build --preset debug
+./build/debug/uin-campus
+
+## résultats attendu
+UIN-Campus - Système de gestion académique
+Version 0.1.0
