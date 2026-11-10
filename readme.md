@@ -1,5 +1,5 @@
 # UIN-Campus
-Systeme de gestion academique de l'UIN (projet fil rouge C++23).
+
  Règles académiques et saisie dans UIN-Campus
 
 ## Versions des outils
