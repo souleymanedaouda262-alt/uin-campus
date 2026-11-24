@@ -1,6 +1,7 @@
 #include "uincampus/calculs.hpp"
 #include "uincampus/regles.hpp"
 #include "uincampus/saisie.hpp"
+#include "uincampus/uincampus.hpp"
 #include "uincampus/version.hpp"
 #include <cstdlib>
 #include <format>
@@ -15,7 +16,7 @@ enum class Suite { Continuer, Terminer, Erreur };
 void afficherAide()
 {
     std::println("Usage : uin-campus [--version] [--aide]");
-    std::println("  --version   affiche la version");
+    std::println("  --version   affiche la version et les informations de construction");
     std::println("  --aide      affiche cette aide");
 }
 [[nodiscard]] Suite traiterOptions(std::span<char*> arguments)
@@ -25,7 +26,7 @@ void afficherAide()
     }
     for (const std::string_view option : arguments.subspan(1)) {
         if (option == "--version") {
-            std::println("uin-campus {}", uin::version());
+            std::println("{}", uin::informationsConstruction());
             return Suite::Terminer;
         }
         if (option == "--aide") {
@@ -41,7 +42,7 @@ void afficherAide()
 void afficherLigne(std::string_view libelle, std::string_view valeur)
 {
     std::println("{:<24}{:>20}", libelle, valeur);
-}
+} // afficherLigne : inchangée par rapport au chapitre 5
 } // namespace
 int main(int argc, char* argv[])
 {
@@ -78,4 +79,4 @@ int main(int argc, char* argv[])
     afficherLigne("Mention", uin::libelle(uin::mentionPour(moyenneGenerale)));
     std::println("{:-<44}", "");
     return EXIT_SUCCESS;
-}
+} // main : inchangé par rapport au chapitre 5
